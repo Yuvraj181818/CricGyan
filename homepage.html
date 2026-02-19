@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CricGyan</title>
+
+    <link rel="stylesheet" href="homepage.css">
+    <script src="https://kit.fontawesome.com/6ab5d1bb72.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" sizes="20x20" href="Images/logo1.png" type="image/x-icon">
+</head>
+
+<body class="body">
+
+    <!-- Navigation bar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="Images/logo1.png" alt="CricGyan Logo" class="logo-img">
+                CricGyan
+            </div>
+            <div class="menu">
+                <a href="#" class="nav-link active" onclick="showHome(this); return false;">Home</a>
+                <a href="#" class="nav-link" onclick="showPage('stats', this); return false;">Stats</a>
+                <a href="#" class="nav-link" onclick="showPage('teams', this); return false;">Teams</a>
+                <a href="#" class="nav-link" onclick="showPage('records', this); return false;">Records</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ===== HOME PAGE ===== -->
+    <div class="page active" id="home-wrapper">
+        <div class="container">
+
+            <main class="main1">
+                <section class="firsthead">
+                    <h1>T20 World Cup 2026</h1>
+                    <p>
+                        The ICC Men's T20 World Cup 2026 is set to be one of the most exciting editions yet, running from February 7 to March 8, 2026, co‑hosted by India and Sri Lanka. A total of 20 teams will compete across several venues, including major stadiums in Mumbai, Kolkata, Chennai, Colombo and more.
+                    </p>
+                    <p>
+                        Nepal has qualified for the tournament and will be placed in Group C, facing strong sides such as England, West Indies, Bangladesh, and Italy. Nepal's first match is scheduled for February 8 in Mumbai, marking their third appearance in the T20 World Cup after 2014 and 2024.
+                    </p>
+                    <p>
+                        India, the defending champions from the 2024 edition, will kick off their campaign against the United States in Mumbai on February 7. As one of the favorites to lift the trophy, India's group includes traditional rivals and emerging teams, setting up thrilling contests early in the tournament.
+                    </p>
+                    <p>
+                        Fans across the world are eagerly awaiting the Super 8s and knockout stages, which promise high‑intensity matches and potentially classic T20 battles on the road to the final in early March.
+                    </p>
+                </section>
+            </main>
+
+            <main class="main2">
+                <section class="secondhead">
+                    <h1>RCB: Defending Champions</h1>
+                    <p>RCB gears up to defend their title this season, aiming to thrill fans with power-packed performances</p>
+                    <p>Fans across the world are eagerly awaiting the Super 8s and knockout stages, which promise high‑intensity matches and potentially classic T20 battles on the road to the final in early March.</p>
+                    <p>RCB have also strengthened their lineup with strategic buys in Venkatesh Iyer and New Zealand pacer Jacob Duffy to add all‑round firepower and bowling cover as they aim to thrill fans and retain the title this season.</p>
+                </section>
+            </main>
+
+            <main class="main3">
+                <section class="thirdhead">
+                    <h1>Virat & Rohit: Recent ODI Form and 2027 Squad Outlook</h1>
+                    <p>
+                        Virat Kohli scored back-to-back hundreds against South Africa in 2025,
+                        finishing Player of the Series.
+                    </p>
+                    <p>
+                        Rohit Sharma impressed on the Australia tour with an unbeaten 121
+                        in Sydney.
+                    </p>
+                    <p>
+                        These performances strengthen hopes of their presence in India's
+                        2027 ODI World Cup squad.
+                    </p>
+                </section>
+            </main>
+
+        </div>
+    </div>
+
+    <!-- ===== STATS PAGE ===== -->
+    <main class="page" id="stats">
+        <div class="page-content">
+            <h1>Search Player's Stats</h1>
+
+            <div class="stats-search-container">
+                <div class="stats-search-bar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text"
+                           placeholder="Search for players by name or country..."
+                           id="playerSearchInput"
+                           onkeyup="searchPlayers()"
+                           autocomplete="off" />
+                </div>
+                <div class="player-search-results" id="playerSearchResults"></div>
+            </div>
+
+            <div class="player-card" id="playerCard" style="display: none;">
+                <button class="close-card" onclick="closePlayerCard()">&times;</button>
+                <div class="player-header">
+                    <h2 id="playerName">Player Name</h2>
+                    <p class="player-country" id="playerCountry">Country</p>
+                </div>
+                <div class="player-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Role</span>
+                        <span class="stat-value" id="playerRole">-</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Total Runs</span>
+                        <span class="stat-value highlight" id="playerRuns">-</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Centuries</span>
+                        <span class="stat-value" id="playerCenturies">-</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Fours</span>
+                        <span class="stat-value" id="playerFours">-</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Sixes</span>
+                        <span class="stat-value" id="playerSixes">-</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Strike Rate</span>
+                        <span class="stat-value" id="playerStrikeRate">-</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ===== TEAMS PAGE ===== -->
+    <main class="page" id="teams">
+        <div class="page-content">
+            <h1>ICC Team Rankings</h1>
+            <p class="page-subtitle">Official ICC rankings across all three formats</p>
+
+            <div class="rankings-grid">
+
+                <!-- TEST RANKINGS -->
+                <div class="ranking-card">
+                    <div class="ranking-card-header test-header">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <h2>Test Rankings</h2>
+                    </div>
+                    <div class="table-wrapper">
+                        <table class="rankings-table">
+                            <thead>
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>Team</th>
+                                    <th>Rating</th>
+                                    <th>Points</th>
+                                </tr>
+                            </thead>
+                            <tbody id="test-rankings-body">
+    <tr><td>1</td><td>Australia</td><td>36</td><td>4,604</td><td>128</td></tr>
+    <tr><td>2</td><td>South Africa</td><td>31</td><td>3,581</td><td>116</td></tr>
+    <tr><td>3</td><td>England</td><td>46</td><td>5,013</td><td>109</td></tr>
+    <tr><td>4</td><td>India</td><td>39</td><td>4,064</td><td>104</td></tr>
+    <tr><td>5</td><td>New Zealand</td><td>29</td><td>2,839</td><td>98</td></tr>
+    <tr><td>6</td><td>Sri Lanka</td><td>27</td><td>2,364</td><td>88</td></tr>
+    <tr><td>7</td><td>Pakistan</td><td>25</td><td>2,050</td><td>82</td></tr>
+    <tr><td>8</td><td>West Indies</td><td>33</td><td>2,270</td><td>69</td></tr>
+    <tr><td>9</td><td>Bangladesh</td><td>30</td><td>1,888</td><td>63</td></tr>
+    <tr><td>10</td><td>Ireland</td><td>8</td><td>185</td><td>23</td></tr>
+    <tr><td>11</td><td>Zimbabwe</td><td>18</td><td>208</td><td>12</td></tr>
+    <tr><td>12</td><td>Afghanistan</td><td>6</td><td>62</td><td>10</td></tr>
+</tbody>
+
+                        </table>
+                    </div>
+                </div>
+
+                <!-- ODI RANKINGS -->
+                <div class="ranking-card">
+                    <div class="ranking-card-header odi-header">
+                        <i class="fa-solid fa-circle-dot"></i>
+                        <h2>ODI Rankings</h2>
+                    </div>
+                    <div class="table-wrapper">
+                        <table class="rankings-table">
+                            <thead>
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>Team</th>
+                                    <th>Rating</th>
+                                    <th>Points</th>
+                                </tr>
+                            </thead>
+                            <tbody id="odi-rankings-body">
+    <tr><td>1</td><td>India</td><td>36</td><td>4,471</td><td>124</td></tr>
+    <tr><td>2</td><td>South Africa</td><td>37</td><td>4,062</td><td>110</td></tr>
+    <tr><td>3</td><td>England</td><td>35</td><td>3,717</td><td>106</td></tr>
+    <tr><td>4</td><td>Pakistan</td><td>41</td><td>4,294</td><td>105</td></tr>
+    <tr><td>5</td><td>Australia</td><td>38</td><td>4,134</td><td>109</td></tr>
+    <tr><td>6</td><td>New Zealand</td><td>38</td><td>4,160</td><td>109</td></tr>
+    <tr><td>7</td><td>Bangladesh</td><td>37</td><td>3,252</td><td>88</td></tr>
+    <tr><td>8</td><td>Sri Lanka</td><td>35</td><td>3,493</td><td>100</td></tr>
+    <tr><td>9</td><td>West Indies</td><td>32</td><td>2,465</td><td>77</td></tr>
+    <tr><td>10</td><td>Ireland</td><td>33</td><td>1,522</td><td>46</td></tr>
+    <tr><td>11</td><td>Zimbabwe</td><td>24</td><td>1,291</td><td>54</td></tr>
+    <tr><td>12</td><td>Scotland</td><td>34</td><td>1,387</td><td>41</td></tr>
+    <tr><td>13</td><td>Nepal</td><td>32</td><td>1,060</td><td>33</td></tr>
+    <tr><td>14</td><td>United States</td><td>33</td><td>707</td><td>21</td></tr>
+    <tr><td>15</td><td>United Arab Emirates</td><td>32</td><td>250</td><td>08</td></tr>
+</tbody>
+
+                        </table>
+                    </div>
+                </div>
+
+                <!-- T20 RANKINGS -->
+                <div class="ranking-card">
+                    <div class="ranking-card-header t20-header">
+                        <i class="fa-solid fa-bolt"></i>
+                        <h2>T20I Rankings</h2>
+                    </div>
+                    <div class="table-wrapper">
+                        <table class="rankings-table">
+                            <thead>
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>Team</th>
+                                    <th>Rating</th>
+                                    <th>Points</th>
+                                </tr>
+                            </thead>
+                            <tbody id="t20-rankings-body">
+                <tbody id="t20-rankings-body">
+    <tr><td>1</td><td>India</td><td>79</td><td>21,569</td><td>273</td></tr>
+    <tr><td>2</td><td>England</td><td>52</td><td>13,433</td><td>258</td></tr>
+    <tr><td>3</td><td>Australia</td><td>48</td><td>12,377</td><td>258</td></tr>
+    <tr><td>4</td><td>New Zealand</td><td>61</td><td>15,255</td><td>250</td></tr>
+    <tr><td>5</td><td>South Africa</td><td>59</td><td>14,315</td><td>243</td></tr>
+    <tr><td>6</td><td>Pakistan</td><td>81</td><td>19,268</td><td>238</td></tr>
+    <tr><td>7</td><td>West Indies</td><td>70</td><td>16,510</td><td>236</td></tr>
+    <tr><td>8</td><td>Sri Lanka</td><td>56</td><td>12,846</td><td>229</td></tr>
+    <tr><td>9</td><td>Bangladesh</td><td>67</td><td>14,925</td><td>223</td></tr>
+    <tr><td>10</td><td>Afghanistan</td><td>51</td><td>11,273</td><td>221</td></tr>
+    <tr><td>11</td><td>Zimbabwe</td><td>68</td><td>13,690</td><td>201</td></tr>
+    <tr><td>12</td><td>Ireland</td><td>45</td><td>9,001</td><td>200</td></tr>
+    <tr><td>13</td><td>Netherlands</td><td>38</td><td>6,893</td><td>181</td></tr>
+    <tr><td>14</td><td>Scotland</td><td>26</td><td>4,713</td><td>181</td></tr>
+    <tr><td>15</td><td>Namibia</td><td>38</td><td>6,772</td><td>178</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div><!-- end rankings-grid -->
+        </div>
+    </main>
+
+    <!-- ===== RECORDS PAGE ===== -->
+    <main class="page" id="records">
+        <div class="page-content">
+            <h1>Top Run Scorers &mdash; All Time Records</h1>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>S.N.</th>
+                            <th>Player</th>
+                            <th>Runs</th>
+                            <th>Fours</th>
+                            <th>Sixes</th>
+                            <th>100s</th>
+                            <th>Strike Rate</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="7" style="text-align:center; padding:20px;">Loading records...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>
